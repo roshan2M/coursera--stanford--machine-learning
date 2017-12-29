@@ -20,15 +20,13 @@ grad = zeros(size(theta));
 %
 
 % Computing the unregularized cost and gradient
-h_theta = X*theta; % Predicting outputs
-error = h_theta - y; % Error term
-J = 1/(2*m) * sum(error.^2); % Unregularized cost
-grad = 1/m .* (X'*error); % Unregularized gradient
+h_theta = X * theta; % Predicting outputs
+J = 1/(2*m) * sum((h_theta-y).^2); % Unregularized cost
+grad = 1/m * sum(X'*theta); % Unregularized gradient
 
 % Adding the regularization term
-theta(1) = 0; % Setting the parameters of the bias unit to 0
-J = J + lambda/(2*m) * sum(theta.^2); % Regularized cost
-grad = grad + (lambda/m) * theta; % Regularized gradient
+theta(1) = 0;
+J = 
 
 % =========================================================================
 

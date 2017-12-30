@@ -44,22 +44,31 @@ error_val   = zeros(m, 1);
 %
 %       for i = 1:m
 %           % Compute train/cross validation errors using training examples 
-%           % X(1:i, :) and y(1:i), storing the result in 
+%           % X(1:i,:) and y(1:i), storing the result in 
 %           % error_train(i) and error_val(i)
 %           ....
-%           
 %       end
 %
 
-% ---------------------- Sample Solution ----------------------
-
-
-
-
-
-
-
-% -------------------------------------------------------------
+% For each size of input from 1 to m
+for i = 1:m
+    % Takes the first i training examples
+    X_i = X(1:i,:);
+    y_i = y(1:i);
+    
+    % Trains theta with the trainLinReg() function
+    theta = trainLinearReg(X_i, y_i, lambda);
+    
+    % Predicts on the training inputs and finds the 
+    % training error
+    h_i = X_i * theta;
+    error_train(i) = 1/(2*i) * sum((h_i-y_i).^2);
+    
+    % Predicts on the cross-validation inputs and 
+    % finds the cross-validation error
+    hval = Xval * theta;
+    error_val(i) = 1/(2*m) * sum((hval-yval).^2);
+end
 
 % =========================================================================
 

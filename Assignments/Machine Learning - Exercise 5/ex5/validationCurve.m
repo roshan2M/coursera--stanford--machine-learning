@@ -39,14 +39,19 @@ error_val = zeros(length(lambda_vec), 1);
 %
 %
 
-
-
-
-
-
-
-
-
+% Testing each of the lambdas
+for i = 1:length(lambda_vec)
+    lambda = lambda_vec(i); % Given lambda
+    
+    % Training theta on the entire training set
+    theta = trainLinearReg(X, y, lambda);
+    
+    % Finding the training set error
+    error_train(i) = linearRegCostFunction(X, y, theta, 0);
+    
+    % Finding the cross-validation set error
+    error_val(i) = linearRegCostFunction(Xval, yval, theta, 0);
+end
 
 % =========================================================================
 

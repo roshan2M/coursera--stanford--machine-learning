@@ -26,7 +26,7 @@ x = zeros(n, 1);
 %               Then, the word_indices vector for this text might look 
 %               like:
 %               
-%                   60  100   33   44   10     53  60  58   5
+%                   60  100   33   44   10   53  60  58   5
 %
 %               where, we have mapped each word onto a number, for example:
 %
@@ -48,12 +48,9 @@ x = zeros(n, 1);
 %
 %
 
-
-
-
-
-
-
+% Goes through each element in word_indices and assigns the value of each 
+% word in the feature vector x to 1 if it was included in the email.
+x(word_indices) = 1; % vectorized implementation
 
 % =========================================================================
     

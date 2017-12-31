@@ -20,11 +20,8 @@ S = zeros(n);
 %       number of examples).
 %
 
-
-
-
-
-
+Sigma = (1/m) * (X'*X); % Computes Sigma
+[U, S, ~] = svd(Sigma); % Singular value decomposition of Sigma
 
 % =========================================================================
 

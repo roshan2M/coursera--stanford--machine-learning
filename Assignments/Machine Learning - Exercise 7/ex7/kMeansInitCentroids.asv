@@ -13,11 +13,8 @@ centroids = zeros(K, size(X, 2));
 %               the dataset X
 %
 
-% Creates a row vector of random indices from 1 to m
 permutation = randperm(size(X,1));
-
-% Sets the K centroids to the first K random training examples
-centroids = X(permutation(1:K),:);
+centroids = X(1:K
 
 % =============================================================
 

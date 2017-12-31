@@ -28,13 +28,10 @@ for i = 1:m
     % Create a distances column vector
     distance = zeros(1,K);
     
-    % Gets the distance from the training example to each centroid
+    % 
     for j = 1:K
         distance(1,j) = sqrt(sum((X(i,:)-centroids(j,:)).^2));
     end
-    
-    % Finds the minimum distance between the training example and the
-    % centroid and stores the centroid index
     [~, index] = min(distance);
     idx(i,1) = index;
 end

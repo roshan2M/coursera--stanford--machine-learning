@@ -21,9 +21,8 @@ sigma2 = zeros(n, 1);
 %               should contain variance of the i-th feature.
 %
 
-% Vectorized implementations
 mu = mean(X); % Computes the mean of each row of inputs X
-sigma2 = (1/m)*sum((X-mu).^2); % Computes the variance of each input
+sigma2 = (1/m)*sum((X-mu).^2); % Computes the variance of each 
 
 % =============================================================
 
